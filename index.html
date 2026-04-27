@@ -1,1 +1,457 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Online Survey Platform</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <h1>Online Survey Platform</h1>
+                <div class="nav-links">
+                    <button id="surveyTab" class="tab-button active">
+                        Survey
+                    </button>
+                    <button id="resultsTab" class="tab-button">Results</button>
+                </div>
+            </nav>
+        </header>
 
+        <main class="container">
+            <section id="surveySection" class="card">
+                <h2>Student Developer Survey</h2>
+                <p class="sub-text">
+                    Help us understand the developer landscape in our college by
+                    filling out this form.
+                </p>
+
+                <!-- Form demonstrates multiple input types with built-in HTML validation -->
+                <form id="surveyForm">
+                    <h3 class="section-title">1) Basic Information</h3>
+                    <div class="form-grid">
+                        <label>
+                            Full Name *
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="e.g., John Doe"
+                                required
+                                minlength="3"
+                            />
+                        </label>
+
+                        <label>
+                            College Email *
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="example@email.com"
+                                required
+                            />
+                            <small class="hint-text"
+                                >Enter any valid email (e.g., personal or
+                                college email).</small
+                            >
+                        </label>
+
+                        <label>
+                            Age *
+                            <input
+                                type="number"
+                                name="age"
+                                min="16"
+                                max="80"
+                                required
+                            />
+                        </label>
+
+                        <label>
+                            Department / Branch *
+                            <select name="department" required>
+                                <option value="">Select department</option>
+                                <option value="CSE">CSE</option>
+                                <option value="IT">IT</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Year of Study *
+                            <select name="year" required>
+                                <option value="">Select year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Favorite Programming Language *
+                            <select name="language" required>
+                                <option value="">Select an option</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Python">Python</option>
+                                <option value="Java">Java</option>
+                                <option value="C++">C++</option>
+                                <option value="C">C</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <fieldset>
+                        <legend>Mode of Residence *</legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="residence"
+                                value="Hostel"
+                                required
+                            />
+                            Hostel</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="residence"
+                                value="Day Scholar"
+                            />
+                            Day Scholar</label
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>How often do you attend classes? *</legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="attendance"
+                                value="Always"
+                                required
+                            />
+                            Always</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="attendance"
+                                value="Often"
+                            />
+                            Often</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="attendance"
+                                value="Sometimes"
+                            />
+                            Sometimes</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="attendance"
+                                value="Rarely"
+                            />
+                            Rarely</label
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Experience Level *</legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="experience"
+                                value="Beginner"
+                                required
+                            />
+                            Beginner</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="experience"
+                                value="Intermediate"
+                            />
+                            Intermediate</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="experience"
+                                value="Advanced"
+                            />
+                            Advanced</label
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                            Areas of Interest (Select at least one) *
+                        </legend>
+                        <label
+                            ><input
+                                type="checkbox"
+                                name="interests"
+                                value="Frontend"
+                            />
+                            Frontend</label
+                        >
+                        <label
+                            ><input
+                                type="checkbox"
+                                name="interests"
+                                value="Backend"
+                            />
+                            Backend</label
+                        >
+                        <label
+                            ><input
+                                type="checkbox"
+                                name="interests"
+                                value="Fullstack"
+                            />
+                            Fullstack</label
+                        >
+                        <label
+                            ><input
+                                type="checkbox"
+                                name="interests"
+                                value="Machine Learning"
+                            />
+                            Machine Learning</label
+                        >
+                        <p id="interestError" class="error-text"></p>
+                    </fieldset>
+
+                    <h3 class="section-title">
+                        2) Academic Experience & Campus Support
+                    </h3>
+                    <div class="form-grid two-col">
+                        <label>
+                            How satisfied are you with quality of teaching?
+                            (1–5) *
+                            <input
+                                type="range"
+                                name="teachingRating"
+                                min="1"
+                                max="5"
+                                value="3"
+                                id="teachingRange"
+                            />
+                            <span id="teachingValue">3</span>/5
+                        </label>
+
+                        <label>
+                            Rate your college coding environment (1–5) *
+                            <select name="codingEnvironment" required>
+                                <option value="">Select rating</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <fieldset>
+                        <legend>
+                            Are course materials and notes helpful? *
+                        </legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="materialsHelpful"
+                                value="Yes"
+                                required
+                            />
+                            Yes</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="materialsHelpful"
+                                value="Sometimes"
+                            />
+                            Sometimes</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="materialsHelpful"
+                                value="No"
+                            />
+                            No</label
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Do teachers encourage participation? *</legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="teacherParticipation"
+                                value="Yes"
+                                required
+                            />
+                            Yes</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="teacherParticipation"
+                                value="Sometimes"
+                            />
+                            Sometimes</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="teacherParticipation"
+                                value="No"
+                            />
+                            No</label
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                            How difficult are your current courses? *
+                        </legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="courseDifficulty"
+                                value="Easy"
+                                required
+                            />
+                            Easy</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="courseDifficulty"
+                                value="Moderate"
+                            />
+                            Moderate</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="courseDifficulty"
+                                value="Difficult"
+                            />
+                            Difficult</label
+                        >
+                    </fieldset>
+
+                    <h3 class="section-title">3) Overall Satisfaction</h3>
+                    <div class="form-grid two-col">
+                        <label>
+                            Overall college experience (1–5) *
+                            <input
+                                type="range"
+                                name="overallRating"
+                                min="1"
+                                max="5"
+                                value="3"
+                                id="overallRange"
+                            />
+                            <span id="overallValue">3</span>/5
+                        </label>
+
+                        <label>
+                            Would you recommend this college? *
+                            <select name="recommendCollege" required>
+                                <option value="">Select option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="Maybe">Maybe</option>
+                                <option value="No">No</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Additional Feedback / Suggested Improvements
+                        <textarea
+                            name="feedback"
+                            rows="4"
+                            placeholder="Share your thoughts..."
+                        ></textarea>
+                    </label>
+
+                    <button type="submit" class="primary-button">
+                        Submit Survey
+                    </button>
+                    <p
+                        id="confirmationMessage"
+                        class="confirmation"
+                        aria-live="polite"
+                    ></p>
+                </form>
+            </section>
+
+            <section id="resultsSection" class="card hidden">
+                <h2>Survey Results Dashboard</h2>
+                <p class="sub-text">
+                    Submitted responses are shown below in a dynamic table.
+                </p>
+
+                <!-- Table is filled dynamically using JavaScript loops -->
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Dept</th>
+                                <th>Year</th>
+                                <th>Language</th>
+                                <th>Experience</th>
+                                <th>Interests</th>
+                                <th>Coding Env</th>
+                                <th>Overall</th>
+                                <th>Recommend</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-box">
+                        <h3>Total Responses</h3>
+                        <p id="totalResponses">0</p>
+                    </article>
+                    <article class="stat-box">
+                        <h3>Most Popular Language</h3>
+                        <p id="mostSelected">N/A</p>
+                    </article>
+                    <article class="stat-box">
+                        <h3>Average Coding Env Rating</h3>
+                        <p id="avgRating">0.0</p>
+                    </article>
+                    <article class="stat-box">
+                        <h3>Top Interest Area</h3>
+                        <p id="topInterest">N/A</p>
+                    </article>
+                    <article class="stat-box">
+                        <h3>Recommendation (Yes)</h3>
+                        <p id="recommendPercent">0%</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
