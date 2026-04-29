@@ -1,5 +1,7 @@
 # Online Survey Platform (Lab Mini-Project)
 
+Access the link at here : https://online-studentskills-tracker.netlify.app/
+
 A simple, responsive, and dynamic Full Stack style mini-project built directly within a browser logic model to demonstrate Core JavaScript concepts natively. This project strictly demonstrates the usage of multiple Input Types, Form Validations, JavaScript Arrays of Objects, DOM Manipulation, and Dynamic Table logic routines ideal for an academic structural lab submission.
 
 ## ✅ Requirements Fulfilled Completely
